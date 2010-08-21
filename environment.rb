@@ -11,8 +11,8 @@ require 'sinatra' unless defined?(Sinatra)
 
 configure do
   SiteConfig = OpenStruct.new(
-                 :title => 'Your Application Name',
-                 :author => 'Your Name',
+                 :title => 'Apache Virtual Host manager',
+                 :author => 'Chip Castle <chip@chipcastle.com>',
                  :url_base => 'http://localhost:4567/'
                )
 

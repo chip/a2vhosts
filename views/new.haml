@@ -1,0 +1,24 @@
+%form{:action => '/create', :method => 'post'}
+  %p
+    Name:
+  %p
+    %input{:name => 'virtual_host[name]', :type => 'text', :size => '30', :maxlength => '50'}
+  %p
+    Server name:
+  %p
+    %input{:name => 'virtual_host[server_name]', :type => 'text', :size => '30', :maxlength => '50'}
+  %p
+    Document root:
+  %p
+    %input{:name => 'virtual_host[document_root]', :type => 'text', :size => '30', :maxlength => '50'}
+  %p
+    Rails environment:
+  %p
+    %select{:name => 'virtual_host[rails_env]'}  
+      %option{:value => ''} N/A
+      %option{:value => 'development'} development
+      %option{:value => 'staging'} staging
+      %option{:value => 'test'} test
+      %option{:value => 'production'} production
+  %p
+    %input{:name => 'submit', :type => 'Submit', :value => 'Save Virtual Host'}
