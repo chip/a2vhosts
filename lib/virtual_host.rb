@@ -5,7 +5,8 @@ class VirtualHost
   property :name,           String  
   property :server_name,    String  
   property :document_root,  String
-  property :rails_env,      String  
+  property :rails_env,      String
+  property :enabled,        Boolean
   property :created_at,     DateTime
   property :updated_at,     DateTime
 

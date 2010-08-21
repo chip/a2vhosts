@@ -14,7 +14,7 @@ module Sinatra::Partials
         false, :locals => {template_array[-1].to_sym => member}))
       end.join("\n")
     else
-      erb(:"#{template}", options)
+      haml(:"#{template}", options)
     end
   end
 end

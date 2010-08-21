@@ -11,7 +11,7 @@ body {
   padding: 0.5em 0 0 0;
   margin: 0;
   text-align: center;
-  border-bottom: 3px solid #000;
+  border-bottom: 1px solid #ccc;
 }
 #content {
   padding: 0;
@@ -19,14 +19,14 @@ body {
 }
 #footer {
   padding: 0;
-  margin: 0;
+  margin: 50px 0 0 0;
   font-size: 0.7em;
   text-align: center;
-  border-top: 3px solid #000;
+  border-top: 1px solid #ccc;
 }
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0em;
-  margin-bottom: .25em;
+  margin-bottom: .05em;
   font-weight: bold;
 }
 h1 { font-size: 2.2em; }
@@ -36,8 +36,8 @@ h4 { font-size: 1.3em; }
 h5 { font-size: 1.2em; }
 h6 { font-size: 1.1em; }
 p {
-  margin-bottom: 1em;
-  line-height: 1.3;
+  margin-bottom: 0.05em;
+  line-height: 0.5;
 }
 a {
   color: #095EAE;
@@ -49,4 +49,34 @@ a:hover {
 }
 #logo a:hover {
   text-decoration: none;
+}
+#logo, #navbar {
+  margin-bottom: 20px;
+}
+#virtual_hosts {
+  margin-top: 20px;
+}
+#virtual_hosts th {
+  text-align: left;
+  background-color: #f8dc86;
+  padding-left: 5px;
+}
+td {
+  padding: 10px;
+  margin: 0;
+}
+.hover {
+  background-color: #ffea5a;
+}
+tr:nth-child(odd) {
+  background-color: #c6d5ff;  
+}
+tr:nth-child(even) {
+  background-color: #ffffff;  
+}
+#submit {
+  margin-top: 50px;
+}
+.label {
+  font-weight: bold;
 }

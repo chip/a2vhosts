@@ -1,0 +1,31 @@
+%div
+  %a{:href => '/new'} Add Virtual Host
+  
+%div{:style => "clear: both;"}
+  - if @virtual_hosts.empty?
+    %h6
+      No records were found
+  - else
+    %table#virtual_hosts
+      %tbody
+        %tr
+          %th Name
+          %th Server name
+          %th Document Root
+          %th Rails Environment
+          %th Status
+          %th
+    
+        = partial(:"virtual_hosts/virtual_host", :collection => @virtual_hosts)
+
+:javascript
+  $(function() {
+    $("tr").hover(
+      function () {
+        $(this).addClass("hover");
+      },
+      function () {
+        $(this).removeClass("hover");
+      }
+    );
+  });

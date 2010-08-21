@@ -3,12 +3,17 @@
   %head
     %title= @title || SiteConfig.title
     %link{:href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
+    %script{:type => 'text/javascript', :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"}
   %body
     #container
       #header
         #logo
           %h1
             %a{:href => '/'}= SiteConfig.title
+        #navbar
+          %a{:href => '/'} Virtual hosts
+          |
+          %a{:href => '/apache_config/edit'} Apache configuration
       #content= yield
       #footer
         %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{SiteConfig.author} &mdash;"

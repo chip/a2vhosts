@@ -1,0 +1,12 @@
+%form{:action => '/apache_config', :method => 'put'}
+  %p
+    Virtual hosts path
+  %p
+    %input{:name => 'apache_config[virtual_hosts_path]', :type => 'text', :size => '30', :maxlength => '50'}
+  %p
+    apachectl
+  %p
+  %input{:name => 'apache_config[apachectl]', :type => 'text', :size => '30', :maxlength => '50'}
+
+  %p
+    %input{:name => 'submit', :type => 'Submit', :value => 'Save apache configuration'}

@@ -7,7 +7,7 @@ require 'dm-migrations'
 require 'haml'
 require 'ostruct'
 
-require 'sinatra' unless defined?(Sinatra)
+require 'sinatra' unless defined?(Sinatra) # Had to uninstall rack 1.2.1 and install 1.2.0
 
 configure do
   SiteConfig = OpenStruct.new(

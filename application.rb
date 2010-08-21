@@ -1,9 +1,15 @@
 require 'rubygems'
 require 'sinatra'
+require "sinatra/reloader" #if development?
 require 'environment'
 
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
+end
+
+configure :development do
+  # Create or upgrade all tables at once, like magic
+  DataMapper.auto_upgrade!
 end
 
 helpers Sinatra::Partials
@@ -21,11 +27,11 @@ end
 # root page
 get '/' do
   @virtual_hosts = VirtualHost.all
-  haml :root
+  haml :"virtual_hosts/index"
 end
 
 get '/new' do
-  haml :new
+  haml :"virtual_hosts/new"
 end
 
 post '/create' do
@@ -38,10 +44,20 @@ post '/create' do
   end
 end
 
-get '/apache_config/edit' do
-  haml :apache_config_edit
+get '/delete/:id' do
+  @virtual_host = VirtualHost.get(params[:id])
+  @virtual_host.inspect
+  # virtual_host.delete unless virtual_host.nil?
+  # redirect '/'
 end
 
-put '/apache_config/update' do
-  haml :apache_config_update
+get '/apache_config/edit' do
+  @apache_config = ApacheConfig.first || ApacheConfig.new
+  haml :"apache_config/edit"
+end
+
+put '/apache_config' do
+  @apache_config = ApacheConfig.new(params[:apache_config])
+  @apache_config.save
+  haml :"apache_config/edit"
 end

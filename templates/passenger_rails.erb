@@ -1,0 +1,5 @@
+<VirtualHost *:80>
+  ServerName <%= virtual_host.server_name %>
+  DocumentRoot "<%= virtual_host.document_root %>"
+  ErrorLog "<%= virtual_host.document_root %>/log/<%= virtual_host.rails_env.blank? ? 'development' : virtual_host.rails_env %>.log" 
+</VirtualHost>
